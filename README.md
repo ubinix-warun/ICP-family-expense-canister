@@ -16,11 +16,13 @@ The project runs on [AZLE](https://demergent-labs.github.io/azle/the_azle_book.h
 git clone https://github.com/Vitomir2/family-expense-canister.git
 ```
 
-- cd to the family-expense-canister and install the dependencies
+- cd to the family-expense-canister
 
 ```
 cd family-expense-canister
 ```
+
+- cd to the family-expense-canister
 
 ```
 npm install
