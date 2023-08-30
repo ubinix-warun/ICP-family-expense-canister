@@ -1,0 +1,13 @@
+{
+  "canisters": {
+    "family_expense": {
+      "main": "src/index.ts",
+      "type": "custom",
+      "build": "npx azle family_expense",
+      "root": "src",
+      "ts": "src/index.ts",
+      "candid": "src/index.did",
+      "wasm": ".azle/family_expense/family_expense.wasm.gz"
+    }
+  }
+}
