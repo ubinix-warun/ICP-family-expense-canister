@@ -1,5 +1,5 @@
 # family-expense-canister
-Simple app for tracking family expenses with ICP and canister.
+Application for tracking family expenses with ICP and canister.
 
 ## Use Case
 
