@@ -23,12 +23,14 @@ type FamilyExpense = Record<{
     amount: string;
     attachmentURL: string; // * Picture of a receipt
     createdAt: nat64;
+    labels: Vec<string>;
 }>
 
 type FamilyExpensePayload = Record<{
     familyId: string;
     amount: string;
     attachmentURL: string;
+    labels: Vec<string>;
 }>
 
 const familyStorage = new StableBTreeMap<string, Family>(0, 44, 1024);
@@ -62,6 +64,18 @@ $query;
 export function getFamilyExpenses(familyId: string): Result<Vec<FamilyExpense>, string> {
     return Result.Ok(familyExpensesStorage.values().filter(familyExpense => familyExpense.familyId === familyId));
 }
+
+$query;
+export function getFamilyExpensesSummary(familyId: string): Result<Vec<FamilyExpense>, string> {
+
+    return Result.Ok(familyExpensesStorage.values().filter(familyExpense => familyExpense.familyId === familyId));
+}
+
+// $query;
+// export function getFamilyExpensesReportLast30Day(familyId: string): Result<Vec<FamilyExpense>, string> {
+//     // 
+//     return Result.Ok(familyExpensesStorage.values().filter(familyExpense => familyExpense.familyId === familyId));
+// }
 
 $update;
 export function addFamily(payload: FamilyPayload): Result<Family, string> {
